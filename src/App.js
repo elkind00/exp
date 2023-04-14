@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     fetch('backend')
       .then(res => res.json())
-      .then(BackendInfo)
+      .then(backendInfoSet)
   }, [])
   return (
     <div className="App">
@@ -18,7 +18,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <p>
-          Here's the backend info: {BackendInfo}
+          Here's the backend info: {BackendInfo['success']}, {BackendInfo['greeting']}
         </p>
         <a
           className="App-link"
