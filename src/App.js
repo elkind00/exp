@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const useState(BackendInfo, backendInfoSet) = useState([])
+  let [BackendInfo, backendInfoSet] = useState([])
 
   useEffect(() => {
     fetch('backend')
