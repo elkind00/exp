@@ -10,7 +10,7 @@ function App() {
       .then(res => res.json())
       .then(backendInfoSet)
   }, [])
-  let str = JSON.stringifo(backendInfo)
+  let str = JSON.stringifo(BackendInfo)
   return (
     <div className="App">
       <header className="App-header">
