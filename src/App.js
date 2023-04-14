@@ -10,6 +10,7 @@ function App() {
       .then(res => res.json())
       .then(backendInfoSet)
   }, [])
+  let str = JSON.stringifo(backendInfo)
   return (
     <div className="App">
       <header className="App-header">
@@ -19,6 +20,9 @@ function App() {
         </p>
         <p>
           Here's the backend info: {BackendInfo['success']}, {BackendInfo['greeting']}
+        </p>
+        <p>
+          JSON Stringified version: {str}
         </p>
         <a
           className="App-link"
