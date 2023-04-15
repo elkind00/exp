@@ -6,11 +6,11 @@ function App() {
   let [BackendInfo, backendInfoSet] = useState([])
 
   useEffect(() => {
-    fetch('backend')
+    fetch('awsServerlessExpress/backend')
       .then(res => res.json())
       .then(backendInfoSet)
   }, [])
-  let str = JSON.stringify(BackendInfo)
+
   return (
     <div className="App">
       <header className="App-header">
@@ -22,7 +22,7 @@ function App() {
           Here's the backend info: {BackendInfo['success']}, {BackendInfo['greeting']}
         </p>
         <p>
-          JSON Stringified version: {str}
+          {str}
         </p>
         <a
           className="App-link"
