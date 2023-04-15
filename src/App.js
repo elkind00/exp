@@ -11,6 +11,8 @@ function App() {
       .then(backendInfoSet)
   }, [])
 
+  const str = 'JSON Stringified version: ' + JSON.stringify(BackendInfo)
+
   return (
     <div className="App">
       <header className="App-header">
