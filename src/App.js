@@ -5,11 +5,28 @@ import './App.css';
 function App() {
   let [BackendInfo, backendInfoSet] = useState([])
 
+/* original version
   useEffect(() => {
     fetch('backend')
       .then(res => res.json())
       .then(backendInfoSet)
   }, [])
+*/
+
+  // Need to modify this to check the returned status and print it out, see
+  // this webpage: https://linkpe.in/story/react-fetch-data
+  let errorText = 'no error'
+  useEffect(() => {
+    fetch('backend')
+      .then(res => {
+        if (res.status >= 400) {
+          errorText = "there's an error"
+        }
+        return res.json()
+      })
+      .then(backendInfoSet)
+  }, [])
+  
 
   const str = 'JSON Stringified version: ' + JSON.stringify(BackendInfo)
 
@@ -25,6 +42,9 @@ function App() {
         </p>
         <p>
           {str}
+        </p>
+        <p>
+          Error text: {errorText}
         </p>
         <a
           className="App-link"
