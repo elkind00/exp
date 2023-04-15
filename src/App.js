@@ -6,7 +6,7 @@ function App() {
   let [BackendInfo, backendInfoSet] = useState([])
 
   useEffect(() => {
-    fetch('awsServerlessExpress/backend')
+    fetch('backend')
       .then(res => res.json())
       .then(backendInfoSet)
   }, [])
