@@ -22,7 +22,7 @@ function App() {
         if (res.status >= 400) {
           errorText = "there's an error: "
         }
-        errorText += res.status
+        errorText += JSON.stringify(res)
         return res.json()
       })
       .then(backendInfoSet)
