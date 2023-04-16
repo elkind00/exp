@@ -15,12 +15,14 @@ function App() {
 
   // Need to modify this to check the returned status and print it out, see
   // this webpage: https://linkpe.in/story/react-fetch-data
-  let errorText = 'no error: '
+  let errorText = 'initial value: '
   useEffect(() => {
     fetch('backend')
       .then(res => {
         if (res.status >= 400) {
           errorText = "there's an error: "
+        } else {
+          errorText = "no error: "
         }
         errorText += JSON.stringify(res)
         return res.json()
