@@ -20,7 +20,7 @@ function App() {
     fetch('backend')
       .then(res => {
         if (res.status >= 400) {
-          errorText = "there's an error: "
+          errorText = "return status is 400 or greater: "
         } else {
           errorText = "no error: "
         }
@@ -28,6 +28,9 @@ function App() {
         return res.json()
       })
       .then(backendInfoSet)
+      .catch(err => {
+        errorText = "caught an error: " + JSON.stringify(err)
+      })
   }, [])
   
   const str = 'JSON Stringified version: ' + JSON.stringify(BackendInfo)
