@@ -15,13 +15,14 @@ function App() {
 
   // Need to modify this to check the returned status and print it out, see
   // this webpage: https://linkpe.in/story/react-fetch-data
-  let errorText = 'no error'
+  let errorText = 'no error: '
   useEffect(() => {
     fetch('backend')
       .then(res => {
         if (res.status >= 400) {
-          errorText = "there's an error"
+          errorText = "there's an error: "
         }
+        errorText += res.status
         return res.json()
       })
       .then(backendInfoSet)
