@@ -17,7 +17,8 @@ function App() {
   // this webpage: https://linkpe.in/story/react-fetch-data
   let errorText = 'initial value: '
   useEffect(() => {
-    fetch('backend')
+//    fetch('backend')
+    fetch('https://evcforum.net')
       .then(res => {
         if (res.status >= 400) {
           errorText = "return status is 400 or greater: "
